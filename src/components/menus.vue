@@ -8,7 +8,7 @@
       <!-- v-if 条件渲染-->
       <span class="icon-lock" v-if="item.locked"></span>
       <!-- 数字 -->
-      <span class="count-list" v-if="item.count > 0"> {{item.count}}</span>
+      <span class="count-list" v-if="item.count>0"> {{item.count}}</span>
       {{item.title}}
       <br/>
     </a>
