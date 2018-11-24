@@ -8,7 +8,7 @@
       <!-- v-if 条件渲染-->
       <span class="icon-lock" v-if="item.locked"></span>
       <!-- 数字 -->
-      <span class="count-list" v-if="item.count>0"> {{item.count}}</span>
+      <span class="count-list" v-if="item.count>0"> {{item.count+1}}</span>
       {{item.title}}
       <br/>
     </a>
@@ -21,11 +21,12 @@
 
 <script>
 export default {
-  name: 'menus.vue',
   // data 函数
   data () {
     return {
-      items: [{title: '星期一', count: 3, locked: true}, // 菜单模拟数据
+      // 菜单模拟数据
+      items: [
+        {title: '星期一', count: 3, locked: true},
         {title: '星期二', count: 1, locked: true},
         {title: '星期三', count: 2, locked: true}
       ]

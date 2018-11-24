@@ -9,7 +9,9 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      // path为对应的url地址，比如'/user/:userId'
       path: '/',
+      // name为对应的组件
       name: 'Layouts',
       component: Layouts
     }

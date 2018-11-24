@@ -20,6 +20,7 @@ import todo from './todo'
 // 导出这个组件，外部可以使用
 export default {
   name: 'layouts',
+  // 局部注册
   components: {
     menus,
     todo
