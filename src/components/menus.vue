@@ -15,6 +15,7 @@
     <!-- 新增菜单 -->
     <a class="link-list-new">
       <span class="icon-plus"></span>
+      新增
     </a>
   </div>
 </template>

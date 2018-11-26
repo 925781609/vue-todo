@@ -19,7 +19,7 @@
       <div class="nav-group right">
         <div class="options-web">
           <!-- 锁定图标 -->
-          <a class="nav-item">
+          <a class="nav-item" @click="onlock">
             <span class="icon-lock" v-if="todo.locked"></span>
             <span class="icon-unlock" v-else></span>
           </a>
@@ -36,15 +36,22 @@
         <span class="icon-add"></span>
       </div>
     </nav>
+    <!-- 列表主体模块 -->
     <div class="content-scrollable list-items">
-      <!-- 容器下半部分 -->
+      <div v-for="item in items" :key="item.title">
+        <item :item ="item"></item>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import item from './item'
 export default {
   name: 'todo',
+  components: {
+    item
+  },
   data () {
     return {
       // 详情内容
@@ -60,13 +67,18 @@ export default {
         {checked: false, text: '新的三天', isDelete: false}
       ],
       // 新增代办单项绑定的值
-      text: '原始值'
+      text: ''
     }
   },
   methods: {
     onAdd () {
       // 当用户点击回车时候，给items的值新增一个对象，this.text 即输入框绑定的值
       this.items.push({checked: false, text: this.text, isDelete: false})
+      this.text = ''
+    },
+    onlock () {
+      this.todo.locked = !this.todo.locked
+      this.updateTodo()
     }
   }
 }
